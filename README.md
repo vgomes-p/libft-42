@@ -1,4 +1,4 @@
-# LIBFT (LIBRARY FORTY-TWO)
+![cover](assets/cover-libft.png)
 ## A libft é uma biblioteca personalizada de funções em C desenvolvida como parte do currículo da 42. Este projeto tem como objetivo recriar funções da biblioteca padrão do C e implementar funções adicionais úteis para futuros projetos.
 
 ### Data de início:
