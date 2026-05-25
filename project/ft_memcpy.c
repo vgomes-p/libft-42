@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:32 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:32 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:12 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:12 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t numby)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	long int	cnt;
+	long int	i;
 
-	cnt = -1;
+	i = -1;
 	if (!dest && !src)
 		return (NULL);
-	while (++cnt < (long int)numby)
-		*(char *)(dest + cnt) = *(char *)(src + cnt);
+	while (++i < (long int)n)
+		*(char *)(dest + i) = *(char *)(src + i);
 	return (dest);
 }

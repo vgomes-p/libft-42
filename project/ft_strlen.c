@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:56:13 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:56:13 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:57 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:57 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *var)
+size_t	ft_strlen(const char *st)
 {
-	size_t	cnt;
+	size_t	i;
 
-	cnt = 0;
-	while (var[cnt] != '\0')
+	i = 0;
+	while (st[i] != '\0')
 	{
-		cnt++;
+		i++;
 	}
-	return (cnt);
+	return (i);
 }

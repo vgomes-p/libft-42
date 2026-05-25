@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:55:22 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:55:22 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:39 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:39 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str0)
+char	*ft_strdup(const char *st)
 {
-	int		cnt;
-	char	*str1;
+	int		i;
+	char	*str;
 
-	cnt = 0;
-	str1 = malloc(ft_strlen(str0) + 1);
-	if (!str1)
+	i = 0;
+	str = malloc(ft_strlen(st) + 1);
+	if (!str)
 		return (NULL);
-	while (*str0)
-		str1[cnt++] = *str0++;
-	str1[cnt] = '\0';
-	return (str1);
+	while (*st)
+		str[i++] = *st++;
+	str[i] = '\0';
+	return (str);
 }

@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:55:16 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:55:16 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:36 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:36 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strchr(const char *st, int c)
 {
-	while (*str && *str != (char)ch)
-		str++;
-	if ((char)ch == *str)
-		return ((char *)str);
+	while (*st && *st != (char)c)
+		st++;
+	if ((char)c == *st)
+		return ((char *)st);
 	return (0);
 }

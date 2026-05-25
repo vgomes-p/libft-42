@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:20 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:20 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:07 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:07 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int ch, size_t numby)
+void	*ft_memchr(const void *st, int c, size_t n)
 {
-	if (numby == '\0')
+	if (n == '\0')
 		return (NULL);
-	while (numby--)
+	while (n--)
 	{
-		if (*(char *)str == (char)ch)
-			return ((char *)str);
-		str++;
+		if (*(char *)st == (char)c)
+			return ((char *)st);
+		st++;
 	}
 	return (NULL);
 }

@@ -3,36 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:56:51 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:56:51 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:54:33 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:54:33 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_substr(char const *st, unsigned int start, size_t len)
 {
-	char	*nwstr;
-	size_t	lenstr;
+	char	*str;
+	size_t	j;
 
-	if (!str)
+	if (!st)
 		return (NULL);
-	lenstr = ft_strlen(str);
-	if (start >= lenstr)
+	j = ft_strlen(st);
+	if (start >= j)
 		return (ft_strdup(""));
-	if (lenstr - start >= len)
-		nwstr = malloc((len + 1) * sizeof(char));
+	if (j - start >= len)
+		str = malloc((len + 1) * sizeof(char));
 	else
-		nwstr = malloc((lenstr - start + 1) * sizeof(char));
-	if (nwstr)
+		str = malloc((j - start + 1) * sizeof(char));
+	if (str)
 	{
-		if (len > lenstr + 1)
-			len = lenstr + 1;
-		ft_strlcpy(nwstr, (str + start), (len + 1));
+		if (len > j + 1)
+			len = j + 1;
+		ft_strlcpy(str, (st + start), (len + 1));
 	}
 	else
 		return (NULL);
-	return (nwstr);
+	return (str);
 }

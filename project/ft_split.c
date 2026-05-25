@@ -3,71 +3,71 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:55:09 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:55:09 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:32 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:32 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	mksplit(char const *str, char ch, size_t cnt, char **substr)
+static void	mksplit(char const *st, char c, size_t i, char **substr)
 {
-	char	*str1;
-	size_t	strini;
+	char	*str;
+	size_t	init;
 	size_t	strlen;
 
-	while (str[cnt])
+	while (st[i])
 	{
-		if (str[cnt] && str[cnt] != ch)
+		if (st[i] && st[i] != c)
 		{
-			strini = cnt;
-			while (str[cnt] && str[cnt] != ch)
-				cnt++;
-			strlen = (cnt - strini) + 1;
-			str1 = malloc(sizeof(char) * strlen);
-			ft_strlcpy(str1, &str[strini], strlen);
-			*(char **)(substr++) = str1;
+			init = i;
+			while (st[i] && st[i] != c)
+				i++;
+			strlen = (i - init) + 1;
+			str = malloc(sizeof(char) * strlen);
+			ft_strlcpy(str, &st[init], strlen);
+			*(char **)(substr++) = str;
 		}
-		if (str[cnt] && str[cnt] == ch)
-			while (str[cnt] && str[cnt] == ch)
-				cnt++;
+		if (st[i] && st[i] == c)
+			while (st[i] && st[i] == c)
+				i++;
 	}
 	substr = NULL;
 }
 
-static size_t	cntwords(char const *str, char ch)
+static size_t	ft_cntwords(char const *st, char ch)
 {
 	size_t	words;
 
 	words = 0;
-	while (*str)
+	while (*st)
 	{
-		if (*str && *str != ch)
+		if (*st && *st != ch)
 		{
-			while (*str && *str != ch)
-				str++;
+			while (*st && *st != ch)
+				st++;
 			words++;
 		}
-		if (*str && *str == ch)
-			while (*str && *str == ch)
-				str++;
+		if (*st && *st == ch)
+			while (*st && *st == ch)
+				st++;
 	}
 	return (words + 1);
 }
 
 char	**ft_split(char const *str, char ch)
 {
-	size_t	numstrmk;
-	char	**strsplit;
+	size_t	nb_words;
+	char	**splited;
 
 	if (!str)
 		return (NULL);
-	numstrmk = cntwords(str, ch);
-	strsplit = ft_calloc((numstrmk), sizeof(char *));
-	if (!strsplit)
+	nb_words = ft_cntwords(str, ch);
+	splited = ft_calloc((nb_words), sizeof(char *));
+	if (!splited)
 		return (NULL);
-	mksplit(str, ch, 0, strsplit);
-	return (strsplit);
+	mksplit(str, ch, 0, splited);
+	return (splited);
 }

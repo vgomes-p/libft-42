@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:53:48 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:53:48 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:43 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:43 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int chdig)
+int	ft_isalnum(int c)
 {
-	if (chdig >= '0' && chdig <= '9')
-		return (1);
-	if ((chdig >= 'a' && chdig <= 'z')
-		|| (chdig >= 'A' && chdig <= 'Z'))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	else
 		return (0);

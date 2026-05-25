@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:56:31 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:56:31 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:54:22 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:54:22 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *ltl, size_t lench)
+char	*ft_strnstr(const char *st1, const char *st2, size_t n)
 {
-	size_t	lenb;
-	size_t	lenl;
+	size_t	i;
+	size_t	j;
 
-	lenb = 0;
-	lenl = ft_strlen(ltl);
-	if (lenl == 0)
-		return ((char *)big);
-	while (*big && lenb <= lench)
+	i = 0;
+	j = ft_strlen(st2);
+	if (j == 0)
+		return ((char *)st1);
+	while (*st1 && i <= n)
 	{
-		if (lench - lenb++ >= lenl && !ft_strncmp(big, ltl, lenl))
-			return ((char *)big);
-		big++;
+		if (n - i++ >= j && !ft_strncmp(st1, st2, j))
+			return ((char *)st1);
+		st1++;
 	}
 	return (0);
 }

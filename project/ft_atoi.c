@@ -3,28 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:52:56 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:52:56 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:31 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:31 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *st)
 {
-	int	sign;
-	int	result;
+	int	s;
+	int	res;
+	int	c;
 
-	result = 0;
-	sign = 1;
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
-			sign *= -1;
-	while (ft_isdigit(*str))
-		result = (result * 10) + (*str++ - '0');
-	return (result * sign);
+	s = 1;
+	res = 0;
+	c = 0;
+	while ((*st >= '\t' && *st <= '\r') || *st == ' ')
+		st++;
+	if (*st == '-' || *st == '+')
+	{
+		if (c > 0)
+			return (0);
+		if (*st++ == '-')
+			s *= -1;
+		c++;
+	}
+	while (ft_isdigit(*st))
+		res = (res * 10) + (*st++ - '0');
+	return (res * s);
 }

@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:00 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:00 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:49 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:49 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int var)
+int	ft_isascii(int c)
 {
-	if (var >= 0 && var <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	else
 		return (0);

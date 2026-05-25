@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:56:45 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:56:45 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:54:29 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:54:29 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *str0, char const *set)
+char	*ft_strtrim(char const *st, char const *set)
 {
-	char	*nwstr;
-	size_t	cnt;
+	char	*str;
+	size_t	i;
 
-	if (!str0 || !set)
+	if (!st || !set)
 		return (NULL);
-	while (*str0 && ft_strchr(set, *str0))
-		str0++;
-	cnt = ft_strlen(str0) + 1;
-	while (cnt && ft_strchr(set, str0[cnt - 1]))
-		cnt--;
-	nwstr = (char *) malloc((cnt + 1) * sizeof(char));
-	if (!nwstr)
+	while (*st && ft_strchr(set, *st))
+		st++;
+	i = ft_strlen(st) + 1;
+	while (i && ft_strchr(set, st[i - 1]))
+		i--;
+	str = (char *) malloc((i + 1) * sizeof(char));
+	if (!str)
 		return (NULL);
-	ft_strlcpy(nwstr, str0, cnt + 1);
-	return (nwstr);
+	ft_strlcpy(str, st, i + 1);
+	return (str);
 }

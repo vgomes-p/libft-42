@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:56 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:56 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:25 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:25 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int num, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	long int	nwnum;
+	long int	nb;
 
-	nwnum = num;
-	if (nwnum < 0)
+	nb = n;
+	if (nb < 0)
 	{
-		nwnum *= -1;
+		nb *= -1;
 		ft_putchar_fd('-', fd);
 	}
-	if (nwnum > 9)
-		ft_putnbr_fd(nwnum / 10, fd);
-	ft_putchar_fd(nwnum % 10 + '0', fd);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

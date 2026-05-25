@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:10 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:10 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:53 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:53 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int var)
+int	ft_isprint(int c)
 {
-	if (var >= ' ' && var <= '~')
+	if (c >= ' ' && c <= '~')
 		return (1);
 	else
 		return (0);

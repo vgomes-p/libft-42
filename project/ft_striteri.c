@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:55:26 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:55:26 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:53:48 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:53:48 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *str, void (*ftn)(unsigned int, char*))
+void	ft_striteri(char *st, void (*ftn)(unsigned int, char*))
 {
-	int		cnt;
+	int	i;
 
-	cnt = -1;
-	while (str[++cnt])
-		ftn(cnt, &str[cnt]);
+	i = -1;
+	while (st[++i])
+		ftn(i, &st[i]);
 }

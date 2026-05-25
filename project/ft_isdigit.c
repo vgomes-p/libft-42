@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:04 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:04 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:51 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:51 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int dig)
+int	ft_isdigit(int c)
 {
-	if (dig >= '0' && dig <= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	else
 		return (0);

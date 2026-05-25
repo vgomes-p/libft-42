@@ -3,52 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:54:15 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:54:15 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:56 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:56 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(long int num)
+static int	ft_intlen(long int nb)
 {
-	int	cnt;
+	int	i;
 
-	cnt = 0;
-	if (num <= 0)
+	i = 0;
+	if (nb <= 0)
 	{
-		cnt++;
-		num = -num;
+		i++;
+		nb *= -1;
 	}
-	while (num > 0)
+	while (nb > 0)
 	{
-		cnt++;
-		num /= 10;
+		i++;
+		nb /= 10;
 	}
-	return (cnt);
+	return (i);
 }
 
-char	*ft_itoa(int num)
+char	*ft_itoa(int nb)
 {
-	long int	absnum;
-	int			numlen;
-	char		*str;
+	long int	abs;
+	long int	len;
+	char		*st;
 
-	absnum = num;
-	numlen = ft_intlen(absnum);
-	str = ft_calloc(numlen + 1, sizeof(char));
-	if (!str)
+	abs = nb;
+	len = ft_intlen(abs);
+	st = ft_calloc(len + 1, sizeof(char));
+	if (!st)
 		return (NULL);
-	if (absnum < 0)
-		absnum = -absnum;
-	while (numlen > 0)
+	if (abs < 0)
+		abs *= -1;
+	while (len > 0)
 	{
-		str[--numlen] = absnum % 10 + '0';
-		absnum /= 10;
+		st[--len] = abs % 10 + '0';
+		abs /= 10;
 	}
-	if (num < 0)
-		str[0] = '-';
-	return (str);
+	if (nb < 0)
+		st[0] = '-';
+	return (st);
 }

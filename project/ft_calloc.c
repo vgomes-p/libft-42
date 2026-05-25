@@ -3,26 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgomes-p <vgomes-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/07 12:53:08 by vgomes-p          #+#    #+#             */
-/*   Updated: 2024/11/07 12:53:08 by vgomes-p         ###   ########.fr       */
+/*   Created: 2026/05/13 10:52:41 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/13 10:52:41 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t num_el, size_t numby)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*memaloc;
-	size_t	finsize;
+	void	*alloc;
+	size_t	sz;
 
-	memaloc = NULL;
-	finsize = num_el * numby;
-	if (num_el == 0 || numby == 0 || finsize / num_el != numby)
+	alloc = NULL;
+	sz = nmemb * size;
+	if (nmemb == 0 || size == 0)
+		return (ft_strdup(""));
+	if (sz / nmemb != size)
 		return (NULL);
-	memaloc = malloc(finsize);
-	if (memaloc)
-		ft_bzero(memaloc, finsize);
-	return (memaloc);
+	alloc = malloc(sz);
+	if (alloc)
+		ft_bzero(alloc, sz);
+	return (alloc);
 }
