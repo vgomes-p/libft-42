@@ -17,14 +17,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*alloc;
 	size_t	sz;
 
-	alloc = NULL;
-	sz = nmemb * size;
-	if (nmemb == 0 || size == 0)
-		return (ft_strdup(""));
-	if (sz / nmemb != size)
+	if (nmemb != 0 && size > ((size_t)-1) / nmemb)
 		return (NULL);
+	sz = nmemb * size;
 	alloc = malloc(sz);
-	if (alloc)
-		ft_bzero(alloc, sz);
+	if (!alloc)
+		return (NULL);
+	ft_bzero(alloc, sz);
 	return (alloc);
 }
